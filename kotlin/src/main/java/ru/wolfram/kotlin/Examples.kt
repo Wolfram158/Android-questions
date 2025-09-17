@@ -1,5 +1,5 @@
 package ru.wolfram.kotlin
 
 enum class Examples {
-    DELEGATES
+    DELEGATES, SEQUENCES
 }

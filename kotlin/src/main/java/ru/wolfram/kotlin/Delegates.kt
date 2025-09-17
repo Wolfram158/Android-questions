@@ -3,17 +3,19 @@ package ru.wolfram.kotlin
 import java.util.function.IntFunction
 
 class Delegates : Container {
-    class LoggedMutableList<T>(private val list: MutableList<T>) : MutableList<T> by list {
-        @Suppress("OVERRIDE_DEPRECATION")
-        override fun <T : Any?> toArray(p0: IntFunction<Array<out T?>?>): Array<out T?>? {
-            return super.toArray(p0)
-        }
+    companion object C {
+        class LoggedMutableList<T>(private val list: MutableList<T>) : MutableList<T> by list {
+            @Suppress("OVERRIDE_DEPRECATION")
+            override fun <T : Any?> toArray(p0: IntFunction<Array<out T?>?>): Array<out T?>? {
+                return super.toArray(p0)
+            }
 
-        override fun add(element: T): Boolean {
-            println("Added in $this: $element")
-            return list.add(element)
-        }
+            override fun add(element: T): Boolean {
+                println("Added in $this: $element")
+                return list.add(element)
+            }
 
+        }
     }
 
     override fun run() {

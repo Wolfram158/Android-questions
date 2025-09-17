@@ -9,6 +9,7 @@ import org.koin.dsl.module
 object MainConsoleApplication : KoinComponent {
     val module = module {
         single<Container>(named(Examples.DELEGATES)) { Delegates() }
+        single<Container>(named(Examples.SEQUENCES)) { Sequences() }
     }
 
     init {
@@ -19,7 +20,7 @@ object MainConsoleApplication : KoinComponent {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val container: Container by inject(named(Examples.DELEGATES))
+        val container: Container by inject(named(Examples.SEQUENCES))
         container.run()
     }
 }
