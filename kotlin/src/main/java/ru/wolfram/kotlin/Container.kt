@@ -1,5 +1,7 @@
 package ru.wolfram.kotlin
 
-interface Container {
-    fun run()
+abstract class Container {
+    fun run(n: Int = 0) {
+        javaClass.getDeclaredMethod("run$n").invoke(this)
+    }
 }

@@ -2,7 +2,7 @@ package ru.wolfram.kotlin
 
 import java.util.function.IntFunction
 
-class Delegates : Container {
+class Delegates : Container() {
     companion object C {
         class LoggedMutableList<T>(private val list: MutableList<T>) : MutableList<T> by list {
             @Suppress("OVERRIDE_DEPRECATION")
@@ -18,10 +18,11 @@ class Delegates : Container {
         }
     }
 
-    override fun run() {
+    fun run0() {
         val lml = LoggedMutableList<Int>(mutableListOf())
         repeat(10) {
             lml.add(3 * it + 1)
         }
     }
+
 }

@@ -10,6 +10,7 @@ object MainConsoleApplication : KoinComponent {
     val module = module {
         single<Container>(named(Examples.DELEGATES)) { Delegates() }
         single<Container>(named(Examples.SEQUENCES)) { Sequences() }
+        single<Container>(named(Examples.INIT)) { Init() }
     }
 
     init {
@@ -20,7 +21,7 @@ object MainConsoleApplication : KoinComponent {
 
     @JvmStatic
     fun main(args: Array<String>) {
-        val container: Container by inject(named(Examples.SEQUENCES))
-        container.run()
+        val container: Container by inject(named(Examples.INIT))
+        container.run(0)
     }
 }
