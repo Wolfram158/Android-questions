@@ -17,4 +17,5 @@ val koinVersion = "4.1.0"
 dependencies {
     implementation(project.dependencies.platform("io.insert-koin:koin-bom:$koinVersion"))
     implementation(libs.koin.core)
+    implementation(libs.kotlinx.coroutines.core)
 }

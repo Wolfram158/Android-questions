@@ -1,5 +1,14 @@
 package ru.wolfram.kotlin
 
 enum class Examples {
-    DELEGATES, SEQUENCES, INIT
+    DELEGATES,
+    SEQUENCES,
+    INIT,
+    COROUTINES_1,
+    GLOBAL_SCOPE,
+    CLASH_DECLARATION,
+    CANCELLATION_1,
+    CANCELLATION_2,
+    AS_COROUTINE_DISPATCHER,
+    CHANNEL_FLOW
 }
